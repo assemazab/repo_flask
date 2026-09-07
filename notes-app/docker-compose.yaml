@@ -2,8 +2,8 @@ services:
   back_end:
     image: "app_back"
     build: 
-      context: .
-      dockerfile: backend/Dockerfile
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
       - "5000:5000"
     depends_on:
@@ -17,8 +17,8 @@ services:
   front_end:
     image: "app_front"
     build: 
-      context: . 
-      dockerfile: frontend/Dockerfile
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
       - "80:80"
     environment: 
