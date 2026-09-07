@@ -1,0 +1,49 @@
+services:
+  back_end:
+    image: "app_back"
+    build: 
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    env_file: 
+      - .env  
+
+    networks:
+     - backend_tir
+     - frontend_tir  
+  front_end:
+    image: "app_front"
+    build: 
+      context: . 
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "80:80"
+    environment: 
+     - API_BASE_URL=http://localhost:5000
+    
+    networks:
+     - backend_tir
+     - frontend_tir    
+
+  db:
+    image: postgres:16-alpine
+    
+    env_file:
+      - database.env
+    
+    networks:
+     - backend_tir 
+    
+    volumes:
+     - db:/var/lib/postgresql/data
+
+
+networks:
+  backend_tir:
+  frontend_tir:
+
+volumes:
+ db:

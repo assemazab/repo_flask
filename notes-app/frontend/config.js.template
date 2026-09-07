@@ -1,0 +1,4 @@
+// الملف ده قالب (template). وقت تشغيل الـ container، الـ entrypoint script
+// بيستخدم envsubst عشان يستبدل ${API_BASE_URL} بالقيمة الحقيقية من
+// environment variable ويطلع ملف config.js فعلي في مجلد nginx.
+window.API_BASE_URL = "${API_BASE_URL}";

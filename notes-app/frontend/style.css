@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.add-box {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
+#note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #e2e8f0;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+button {
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0ea5e9;
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.note-card {
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.note-card.done {
+  opacity: 0.5;
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.note-header h3 {
+  margin: 0;
+  word-break: break-word;
+}
+
+.note-footer {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.toggle-btn, .delete-btn {
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  white-space: nowrap;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: #fff;
+}
